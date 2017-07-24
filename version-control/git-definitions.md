@@ -12,6 +12,8 @@
 
 * What is a commit? What makes a good commit message?
 
-> A **commit** is a *save point* in Git. Because Git doesn't automatically save different versions of files, you must use the command line to *tell* Git to create a save point anytime you want to save some changes to those files. Just like always, it's smart to save early and often! A good commit message is specific and detailed and states what was changed since the last commit. It is best written in the imperative tense (as if you were telling someone to do the thing you just did).
+> A **commit** is a save point in Git. Because Git doesn't automatically save different versions of files, you must use the command line to *tell* Git to create a save point anytime you want to save some changes to those files. Just like always, it's smart to save early and often! A good commit message is specific and detailed and states what was changed since the last commit. It is best written in the imperative tense (as if you were telling someone to do the thing you just did).
 
 * What is a merge conflict?
+
+> A **merge conflict** occurs when there are competing changes between branches that are being merged that Git cannot resolve without help. Usually, this happens when programmers make different changes to the same line of the same file, or when one person has deleted a file that someone else has been editing. This halts the merging process until the conflict is resolved... like when two people have a disagreement they cannot resolve on their own, so they call on a mediator to help them figure out who's right and wrong. =)
