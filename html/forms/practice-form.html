@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practice Form</title>
+</head>
+<body>
+  <h1>What's Your Jazz Flavor?</h1>
+  <form action="success.html" method="post">
+    <fieldset>
+     <p>Please enter your information:</p>
+      <div>
+        <label>Name:</label>
+        <input type="text" name="name">
+      </div>
+      <div>
+        <label>Email:</label>
+        <input type="Email" name="email">
+      </div>
+      <div>
+        <label>Date of Birth:</label>
+        <input type="date" name="dob">
+      </div>
+    </fieldset>
+
+    <fieldset>
+        <p>Please indicate your interest(s) in jazz music:</p>
+        <input type="checkbox" name="interest" value="listener"> I like to sit and listen. <br>
+        <input type="checkbox" name="interest" value="dancer"> I dance to jazz music. <br>
+        <input type="checkbox" name="interest" value="musician"> I'm a musician. <br>
+        <input type="checkbox" name="interest" value="history"> I love the history behind jazz.
+    </fieldset>
+    <fieldset>
+      <p>What is your primary instrument?</p>
+      <select name="instrument">
+        <option value="no-response">Choose:</option>
+        <option value="none">n/a</option>
+        <option value="voice">Vocals</option>
+        <option value="sax">Saxophone</option>
+        <option value="trumpet">Trumpet</option>
+        <option value="clarinet">Clarinet</option>
+        <option value="bass">Bass</option>
+        <option value="piano">Piano</option>
+        <option value="trombone">Trombone</option>
+        <option value="drums">Drums</option>
+        <option value="guitar">Guitar</option>
+        <option value="other">Other</option>
+      </select>
+   </fieldset>
+   <fieldset>
+     <div>
+      <p>Please select your favorite era of Jazz:</p>
+      <input type="radio" name="era" value="ragtime">Ragtime (1870-1920)
+      <input type="radio" name="era" value="early">Early Jazz (1900-1920)
+      <input type="radio" name="era" value="swing">Swing Era (1930s-1950)
+      <input type="radio" name="era" value="bebop">Bebop (1945-1950s)
+      <input type="radio" name="era" value="cool">Cool Jazz (1949)
+      <input type="radio" name="era" value="latin">Latin Jazz (1950s)
+      <input type="radio" name="era" value="free">Free Jazz (1960s)
+      <input type="radio" name="era" value="fusion">Fusion (1969-)
+      <input type="radio" name="era" value="contemporary">Contemporary (1980s-)
+      <input type="radio" name="era" value="mainstream">Mainstream (1990s-)
+    </div>
+    <br>
+    <div>
+      <label>Who is your favorite musician from that era?</label>
+      <input type="text" name="favorite-musician">
+    </div>
+    <!--The form element that the <textarea> element is associated with (its "form owner"). The value of the attribute must be the ID of a form element in the same document. If this attribute is not specified, the <textarea> element must be a descendant of a form element. This attribute enables you to place <textarea> elements anywhere within a document, not just as descendants of their form elements.-->
+    <br>
+    <div>
+      <p>Why is that musician your favorite? What is your favorite song with that musician? Please explain.</p>
+      <textarea name="musician-explain" placeholder="Enter response here..."
+        rows="10" cols="100"></textarea>
+    </div>
+   </fieldset>
+   <fieldset>
+     <p>You're almost done! Just tell me, in one word, how would you describe "Jazz":</p>
+     <input type="text" name="one-word">
+     <button type="submit">Submit!</button>
+   </fieldset>
+</form>
+</body>
+</html>
