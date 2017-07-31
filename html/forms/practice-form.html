@@ -7,7 +7,7 @@
   <h1>What's Your Jazz Flavor?</h1>
   <form action="success.html" method="post">
     <fieldset>
-     Please enter your information:
+     <p>Please enter your information:</p>
       <div>
         <label>Name:</label>
         <input type="text" name="name">
@@ -17,12 +17,34 @@
         <input type="Email" name="email">
       </div>
       <div>
-        <label>City, State:</label>
-        <input type="text" name="location">
+        <label>Date of Birth:</label>
+        <input type="date" name="dob">
       </div>
-   </fieldset>
-   <fieldset>
+    </fieldset>
 
+    <fieldset>
+        <p>Please indicate your interest(s) in jazz music:</p>
+        <input type="checkbox" name="interest" value="listener" checked="yes"> I like to sit and listen. <br>
+        <input type="checkbox" name="interest" value="dancer" checked="yes"> I dance to jazz music. <br>
+        <input type="checkbox" name="interest" value="musician" checked="yes"> I'm a musician. <br>
+        <input type="checkbox" name="interest" value="history" checked="yes"> I love the history behind jazz.
+    </fieldset>
+    <fieldset>
+      <p>What is your primary instrument?</p>
+      <select name="instrument">
+        <option value="no-response">Choose:</option>
+        <option value="none">n/a</option>
+        <option value="voice">Vocals</option>
+        <option value="sax">Saxophone</option>
+        <option value="trumpet">Trumpet</option>
+        <option value="clarinet">Clarinet</option>
+        <option value="bass">Bass</option>
+        <option value="piano">Piano</option>
+        <option value="trombone">Trombone</option>
+        <option value="drums">Drums</option>
+        <option value="guitar">Guitar</option>
+        <option value="other">Other</option>
+      </select>
    </fieldset>
 </form>
 
