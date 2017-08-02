@@ -7,5 +7,9 @@
   border-radius: 25px;
   padding: 10px;
   margin-top: 10px;
-
 }
+
+.smaller-text {
+  font-size: .8em;
+}
+
