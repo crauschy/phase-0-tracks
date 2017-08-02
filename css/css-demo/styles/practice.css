@@ -18,3 +18,7 @@ h1:hover {
   background-color: #123456;
 }
 
+section.job li {
+  list-style-type: circle;
+}
+
