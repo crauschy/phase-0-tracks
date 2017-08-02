@@ -1,5 +1,7 @@
 body {
   max-width: 960px;
+  min-width: 300px;
+  padding: 20px;
 }
 
 main {
@@ -22,6 +24,7 @@ cite {
 
 #external-links {
   width: 20%;
+
   display: inline-block;
   vertical-align: top;
 }
