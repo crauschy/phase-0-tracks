@@ -1,4 +1,16 @@
 #octopus {
-  display: block;
-  margin: 50px auto;
+  margin: 100px;
+  position: relative;
+}
+
+#glasses {
+  position: absolute;
+  top: 205px;
+  left: 150px;
+}
+
+#hat {
+  position: absolute;
+  top: 35px;
+  left: 95px;
 }
