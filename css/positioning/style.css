@@ -1,0 +1,25 @@
+
+#octobox {
+  position: relative;
+  width: 350px;
+  margin: 100px auto;
+}
+
+#octopus {
+  display: block;
+  position: relative;
+}
+
+#glasses {
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 40px;
+}
+
+#hat {
+  display: block;
+  position: absolute;
+  top: -60px;
+  left: -20px;
+}
