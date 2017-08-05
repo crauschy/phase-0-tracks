@@ -1,16 +1,25 @@
+
+#octobox {
+  position: relative;
+  width: 350px;
+  margin: 100px auto;
+}
+
 #octopus {
-  margin: 100px;
+  display: block;
   position: relative;
 }
 
 #glasses {
+  display: block;
   position: absolute;
-  top: 205px;
-  left: 150px;
+  top: 100px;
+  left: 40px;
 }
 
 #hat {
+  display: block;
   position: absolute;
-  top: 35px;
-  left: 95px;
+  top: -60px;
+  left: -20px;
 }
