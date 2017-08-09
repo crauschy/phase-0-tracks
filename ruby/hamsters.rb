@@ -31,5 +31,12 @@ age = gets.to_f
   #Set unanswered est. age to `nil`
 if age == ""
   age = nil
-  puts age
   end
+
+#Print Hamster Data to Console
+
+puts "Name: #{name}"
+puts "Volume Level: #{volume}"
+puts "Fur-Color : #{fur}"
+puts "Adoptable? #{adopt}"
+puts "Age: #{age}"
