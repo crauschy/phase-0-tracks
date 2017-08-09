@@ -18,15 +18,15 @@ fur = gets.chomp
 puts "Is #{name} a good candidate for adoption-- y/n?"
 adopt = gets.chomp
 if adopt == "y"
-  adopt = true
+  adopt = "Yes!"
 else
-  adopt = false
+  adopt = "Unfortunately, not."
 end
 
 #Ask for estimated age.
 
 puts "About how old do you think #{name} is?"
-age = gets.to_f
+age = gets.chomp
 
   #Set unanswered est. age to `nil`
 if age == ""
