@@ -1,0 +1,41 @@
+body{
+  background: #cccccc;
+  max-width: 960px;
+  font-family: Monospace;
+}
+
+header{
+  background: #ffffff;
+  width: 90%;
+  margin: 10px auto;
+  padding: 5px 10px;
+  border-right: 5px solid #333333;
+  border-bottom: 5px solid #333333;
+}
+
+section{
+  background: #eeeeee;
+}
+
+section.column-1{
+  display: inline-block;
+  vertical-align: top;
+  max-width: 40%;
+  padding: 0px 10px;
+  margin-left: 5%;
+}
+
+section.column-2{
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  max-width: 40%;
+  padding: 0px 10px;
+  margin-right: 5%;
+}
+
+footer{
+  width: 90%;
+  margin: 10px auto;
+  text-align: center;
+}
