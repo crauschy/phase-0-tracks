@@ -1,0 +1,37 @@
+4.2 ALGORITHMS
+
+DO THE THING
+  Using an elevator
+    - Define which number floor you are on.
+    - Define which number floor you would like to go to.
+    - Call an elevator:
+      - If the number floor you would like to go to is higher than your current floor, press the "up" button
+      - Otherwise, press the "down" button
+    - Every time an elevator arrives, check its direction until the direction you want to go (up/down) matches the direction of the elevator.
+    - When the directions match, get on the elevator.
+    - Search through the number buttons until you find one that equals that of the number floor you'd like to go to. Choose and press that button.
+    - Each time the elevator doors open, check the floor number. Do not stop checking or get off the elevator until the floor number matches the number floor you would like to go to.
+    - When the numbers match, get off the elevator. You have just successfully used an elevator!
+
+RELEASE 1
+  To drink coffee (or not).
+    (assuming I am considering drinking coffee)
+    - Ask: What time is it?
+      - If it is after 5:00AM but before 5:00PM, proceed to the next question.
+      - Otherwise, ask yourself: Do I have a good reason to be awake 5 hours from now?
+        -If yes, proceed to the next question.
+        -Otherwise, stop thinking about drinking coffee.
+
+    - Ask: Is my coffee shop open?
+      - If yes, proceed to the next question.
+      - Otherwise, ask: Do I have coffee beans at home?
+        -If yes, proceed to make coffee.
+        -Otherwise, stop thinking about drinking coffee.
+
+    - Ask: Do I want to go out?
+      - If yes, proceed to the coffee shop and buy a coffee.
+      - Otherwise, ask: Do I have coffee beans at home?
+        -If yes, proceed to make coffee.
+        -Otherwise, ask: Is getting coffee more important to me than staying in?
+          - If yes, proceed to the next question.
+          - Otherwise, stop thinking about drinking coffee.
