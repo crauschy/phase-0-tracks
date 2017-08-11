@@ -1,0 +1,14 @@
+4.2 ALGORITHMS
+
+DO THE THING
+  Using and elevator
+    - Define which number floor you are on.
+    - Define which number floor you would like to go to.
+    - Call an elevator:
+      - If the number floor you would like to go to is higher than your current floor, press the "up" button
+      - Otherwise, press the "down" button
+    - Every time an elevator arrives, check its direction until the direction you want to go (up/down) matches the direction of the elevator.
+    - When the directions match, get on the elevator.
+    - Search through the number buttons until you find one that equals that of the number floor you'd like to go to. Choose and press that button.
+    - Each time the elevator doors open, check the floor number. Do not stop checking or get off the elevator until the floor number matches the number floor you would like to go to.
+    - When the numbers match, get off the elevator. You have just successfully used an elevator!
