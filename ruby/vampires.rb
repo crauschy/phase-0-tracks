@@ -31,8 +31,11 @@ puts emp_likesgarlic
 puts emp_needshealth
 
 #If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
-if emp_age == (current_year - emp_birthyear) && (emp_likesgarlic || emp_needshealth)
+if emp_age != (current_year - emp_birthyear) && (emp_likesgarlic || emp_needshealth)
   vampire_status = "Probably not a vampire"
+elsif emp_age != (current_year - emp_birthyear) && !(emp_likesgarlic || emp_needshealth)
+  vampire_status = "Probably a vampire"
 else vampire_status = "n/a"
 end
-p vampire_status
+
+puts vampire_status
