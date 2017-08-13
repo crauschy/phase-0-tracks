@@ -24,18 +24,45 @@ if emp_needshealth == "y" || emp_needshealth == "yes"
 else emp_needshealth = false
 end
 
-puts emp_name
-puts emp_age
-puts emp_birthyear
-puts emp_likesgarlic
-puts emp_needshealth
+puts "SURVEY ANSWERS:
+
+Name: #{emp_name}
+
+Age: #{emp_age}
+
+Birth Year: #{emp_birthyear}
+
+Would like garlic bread: #{emp_likesgarlic}
+
+Would like health insurance: #{emp_needshealth}
+"
 
 #If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 if emp_age != (current_year - emp_birthyear) && (emp_likesgarlic || emp_needshealth)
   vampire_status = "Probably not a vampire"
-elsif emp_age != (current_year - emp_birthyear) && !(emp_likesgarlic || emp_needshealth)
-  vampire_status = "Probably a vampire"
-else vampire_status = "n/a"
+else vampire_status = "Results inconclusive"
 end
 
-puts vampire_status
+p vampire_status
+
+if emp_age != (current_year - emp_birthyear) && !(emp_likesgarlic || emp_needshealth)
+  vampire_status = "Probably a vampire"
+else vampire_status = "Results inconclusive"
+end
+p vampire_status
+
+if emp_age != (current_year - emp_birthyear) && !emp_likesgarlic && !emp_needshealth
+  vampire_status = "Almost certainly a vampire"
+else vampire_status = "Results inconclusive"
+end
+
+p vampire_status
+
+if (emp_name == "Drake Kula") || (emp_name == "Tu Fang")
+  vampire_status = "Definitely a vampire"
+else vampire_status = "Results inconclusive"
+end
+
+puts "SURVEY RESULTS:
+
+Status: #{vampire_status}
