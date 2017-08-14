@@ -2,29 +2,30 @@
 #Ask user for "password" to encrypt. Assign password variable.
 puts "Choose and type a password to be encrypted. It must be in all lower-case letters."
 password = gets.chomp
-#Print password to be encrypted.
-puts "Ok, so the password you wish to encrypt is:
-  [#{password}]
-Easy peasy... Your password will be encrypted. Hit `return` to continue."
-pause = gets.chomp
-
 #Define encrypt method that advances each letter of password string one letter forward in alphabet:
   #Assign counter variable.
   #Write loop that will continue rewriting each letter of password as the next letter in alphabet (redefining the password variable with its encryption)
 def encrypt(x)
   counter = 0
+#Print password to be encrypted.
+puts "Ok, so the password you wish to encrypt is:
+    [#{x}]
+Easy peasy... Your password will be encrypted..."
+
   while counter < x.length
-    x[counter] =
+    if x[counter] == "z"
+      x[counter] = "a"
+    else x[counter] =
       x[counter].next!
+    end
     counter += 1
   end
+  puts "Your password is now encrypted as:
+  [#{x}]"
+  return x
 end
+
 encrypt(password)
-#Print encrypted password.
-puts "Your password is now encrypted as:
-  [#{password}]
-Hit return to continue."
-pause = gets.chomp
 
 #Time to decrypt
 puts "Great!!!
@@ -45,12 +46,16 @@ def decrypt(x)
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     encrypted_position = alphabet.index(x[counter])
     decrypted_position = encrypted_position - 1
-    p decrypted_password<<alphabet[decrypted_position]
+    decrypted_password<<alphabet[decrypted_position]
     counter += 1
   end
+  puts "Your original password was #{decrypted_password}."
   decrypted_password
 end
 
-voila = decrypt(password)
+decrypt(password)
 
-puts "Your original password was #{voila}."
+encrypt("abc")
+encrypt("zed")
+decrypt("bcd")
+decrypt("afe")
