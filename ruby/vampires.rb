@@ -3,6 +3,7 @@
   to_process = gets.to_i
   counter = 0
 
+##SURVEY##
 while counter < (to_process)
   #What is your name?
     puts "What is your name?"
@@ -44,10 +45,20 @@ while counter < (to_process)
       when (emp_name == "Drake Kula") || (emp_name == "Tu Fang") then vampire_status = "Definitely a vampire"
     end
 
-    if (vampire_status == "")
-      vampire_status = "Results inconclusive"
+  emp_allergy = ""
+  puts "Please name any allergies you have one at a time. When finished, type <done>."
+    while emp_allergy == "" || (emp_allergy != "sunshine" && emp_allergy != "done")
+      emp_allergy = gets.chomp!
+      p emp_allergy
     end
 
+  if (emp_allergy == "sunshine") && !((vampire_status == "Almost certainly a vampire") || (vampire_status == "Definitely a vampire"))
+    vampire_status = "Probably a vampire"
+  end
+
+  if (vampire_status == "")
+      vampire_status = "Results inconclusive"
+  end
   puts "SURVEY RESULTS:
   #{emp_name} is: #{vampire_status}
   "
