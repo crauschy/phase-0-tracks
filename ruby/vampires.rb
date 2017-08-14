@@ -5,6 +5,7 @@
 
 ##SURVEY##
 while counter < (to_process)
+  puts "SURVEY ##{counter + 1}"
   #What is your name?
     puts "What is your name?"
     emp_name = gets.chomp
@@ -49,18 +50,27 @@ while counter < (to_process)
   puts "Please name any allergies you have one at a time. When finished, type <done>."
     while emp_allergy == "" || (emp_allergy != "sunshine" && emp_allergy != "done")
       emp_allergy = gets.chomp!
-      p emp_allergy
     end
 
   if (emp_allergy == "sunshine") && !((vampire_status == "Almost certainly a vampire") || (vampire_status == "Definitely a vampire"))
     vampire_status = "Probably a vampire"
+  else emp_allergy = "none of note"
   end
 
   if (vampire_status == "")
       vampire_status = "Results inconclusive"
   end
-  puts "SURVEY RESULTS:
-  #{emp_name} is: #{vampire_status}
+  puts "SURVEY ##{counter + 1} RESULTS:
+    Name: #{emp_name.upcase}
+    Age: #{emp_age}
+    Birth Year: #{emp_birthyear}
+    Likes Garlic: #{emp_likesgarlic}
+    Needs Insurance: #{emp_needshealth}
+    Allergies: #{emp_allergy}
+
+    #{emp_name.upcase}'s Vampire Status: #{vampire_status.upcase}.
   "
   counter += 1
 end
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+exit
