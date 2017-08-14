@@ -1,7 +1,9 @@
 #1: ENCRYPT METHOD
 #Ask user for "password" to encrypt. Assign password variable.
-puts "Choose and type a password to be encrypted. It must be in all lower-case letters."
-password = gets.chomp
+
+#puts "Choose and type a password to be encrypted. It must be in all lower-case letters."
+#password = gets.chomp
+
 #Define encrypt method that advances each letter of password string one letter forward in alphabet:
   #Assign counter variable.
   #Write loop that will continue rewriting each letter of password as the next letter in alphabet (redefining the password variable with its encryption)
@@ -9,7 +11,7 @@ def encrypt(x)
   counter = 0
 #Print password to be encrypted.
 puts "Ok, so the password you wish to encrypt is:
-    [#{x}]
+  [#{x}]
 Easy peasy... Your password will be encrypted..."
 
   while counter < x.length
@@ -25,13 +27,13 @@ Easy peasy... Your password will be encrypted..."
   return x
 end
 
-encrypt(password)
+#encrypt(password)
 
 #Time to decrypt
-puts "Great!!!
-Now, we will decrypt our newly encrypted password to return it to normal.
-When you're ready to decrypt, hit return."
-pause = gets.chomp
+#puts "Great!!!
+#Now, we will decrypt our newly encrypted password to return it to normal.
+#When you're ready to decrypt, hit return."
+#pause = gets.chomp
 
 #2: DECRYPT METHOD
 #Define a decrypt method that will reverse our encrypt method and return the original password.
@@ -53,11 +55,32 @@ def decrypt(x)
   decrypted_password
 end
 
-decrypt(password)
+#decrypt(password)
 
-encrypt("abc")
-encrypt("zed")
-decrypt("bcd")
-decrypt("afe")
+#encrypt("abc")
+#encrypt("zed")
+#decrypt("bcd")
+#decrypt("afe")
 
-p decrypt(encrypt("swordfish"))
+#p decrypt(encrypt("swordfish"))
+
+
+#Ask user whether decrypt or encrypt a password
+puts "Hello Secret Agent. Would you like to decrypt or encrypt a password?"
+crypt_direction = gets.chomp
+#Ask for the password
+puts "What is the password you would like to #{crypt_direction}?"
+password = gets.chomp
+#Does operation; prints results to screen
+if crypt_direction == "encrypt"
+  encrypt(password)
+elsif crypt_direction == "decrypt"
+  decrypt(password)
+else puts "You have typed incorrectly. Try again"
+end
+
+
+
+
+
+
