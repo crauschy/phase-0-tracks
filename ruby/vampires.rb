@@ -38,31 +38,15 @@ Would like health insurance: #{emp_needshealth}
 "
 
 #If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
-if emp_age != (current_year - emp_birthyear) && (emp_likesgarlic || emp_needshealth)
-  vampire_status = "Probably not a vampire"
-else vampire_status = "Results inconclusive"
+case
+  when emp_age == (current_year - emp_birthyear) && (emp_likesgarlic || emp_needshealth) then vampire_status = "Probably not a vampire"
+  when emp_age != (current_year - emp_birthyear) && (!emp_likesgarlic || !emp_needshealth) then vampire_status = "Probably a vampire"
+  when emp_age != (current_year - emp_birthyear) && emp_likesgarlic && !emp_needshealth then vampire_status = "Almost certainly a vampire"
+  when (emp_name == "Drake Kula") || (emp_name == "Tu Fang") then vampire_status = "Definitely a vampire"
+  else vampire_status = "Results inconclusive."
 end
 
-p vampire_status
-
-if emp_age != (current_year - emp_birthyear) && !(emp_likesgarlic || emp_needshealth)
-  vampire_status = "Probably a vampire"
-else vampire_status = "Results inconclusive"
-end
-p vampire_status
-
-if emp_age != (current_year - emp_birthyear) && !emp_likesgarlic && !emp_needshealth
-  vampire_status = "Almost certainly a vampire"
-else vampire_status = "Results inconclusive"
-end
-
-p vampire_status
-
-if (emp_name == "Drake Kula") || (emp_name == "Tu Fang")
-  vampire_status = "Definitely a vampire"
-else vampire_status = "Results inconclusive"
-end
 
 puts "SURVEY RESULTS:
 
-Status: #{vampire_status}
+Status: #{vampire_status}"
