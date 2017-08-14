@@ -59,3 +59,5 @@ encrypt("abc")
 encrypt("zed")
 decrypt("bcd")
 decrypt("afe")
+
+p decrypt(encrypt("swordfish"))
