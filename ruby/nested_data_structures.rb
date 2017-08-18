@@ -3,44 +3,62 @@
 dance_event = {
   afternoon_dance:{
     location:{
-      name:
-      capacity:
-      floor_type:
+      name: 'Grant Park Pavillion',
+      capacity: 400,
+      floor_type: 'concrete',
       },
     music:{
-      live:
-      djs:
+      live: nil,
+      djs: [
+        'Dave',
+        'Kevin',
+        'Lauren'
+        ]
       },
     volunteers: [
-
+      'Margaret',
+      'Michelle',
+      'Rachel',
+      'Chris'
       ]
     },
   main_dance:{
      location:{
-      name:
-      capacity:
-      floor_type:
+      name: 'Mobtown Ballroom',
+      capacity: 300,
+      floor_type: 'hardwood'
       },
     music:{
-      live:
-      djs:
+      live: 'Naomi and Her Handsome Devils',
+      djs: [
+        'Kevin'
+        'Cate'
+        ]
       },
     volunteers: [
-
+      'Michelle',
+      'Rachel',
+      'Cari',
+      'Dave'
       ]
     },
   late_dance:{
      location:{
-      name:
-      capacity:
-      floor_type:
+      name: 'CORE Dance Studio',
+      capacity: '150',
+      floor_type: 'hardwood'
       },
     music:{
-      live:
-      djs:
+      live: 'Taryn Newborne and the Real Deal',
+      djs: [
+        'Dave',
+        'Lauren'
+        ]
       },
     volunteers: [
-
+      'Chris',
+      'Margaret',
+      'Ashley'
       ]
   }
 }
