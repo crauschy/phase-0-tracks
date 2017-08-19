@@ -54,6 +54,8 @@ dance_event = {
 
 p dance_event[:late_dance][:location]
 
+p dance_event.keys
+
 p dance_event[:late_dance][:location][:capacity]
 
 p dance_event[:main_dance][:djs]
@@ -61,3 +63,4 @@ p dance_event[:main_dance][:djs]
 p dance_event[:main_dance][:djs].reverse
 
 p dance_event[:afternoon_dance][:volunteers][0..1]
+
