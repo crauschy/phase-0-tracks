@@ -1,13 +1,9 @@
 #CLIENT DETAILS PROGRAM
 
-#METHOD DECLARATIONS
+#////////////////METHOD DECLARATIONS//////////////////
 
-#Ask for and convert to appropriate data type
-  # name - string
-  # age - integer
-  # kids - integer
-  # decor_theme - s
-  # budget
+
+#/////////////////// DRIVER CODE ////////////////////
 
 #Define empty client hash
   client = {
@@ -19,6 +15,7 @@
 #     budget:
   }
 
+# Get data:
 # NAME
   puts "Enter client's Last name:"
   client[:name] = gets.chomp
@@ -40,17 +37,48 @@
 
 # BUDGET
   puts "What is their budget? (only numbers, without commas)"
-  client[:budget] = gets.to_i
+  client[:budget] = gets.chomp.to_i
 
+#///////////////////////////////////////#
 
-# DRIVER CODE
-
-
-
-# Print entire hash
+# Print entire hash for user
+  puts "
+  NEW CLIENT INFO:
+    Name:         #{client[:name]}
+    Age:          #{client[:age]}
+    # of Kids:    #{client[:kids]}
+    Decor Theme:  #{client[:decor_theme]}
+    Budget:       #{client[:budget]}
+    "
 
 # Give opportunity to update:
-#   none will skip
-#   "[key]" will prompt for new value and update hash
+  puts "
+  Would you like to change a field? Please type 'none' or which one:
+      name, age, kids, decor_theme, budget"
+  change_field = gets.chomp.to_sym
+  p change_field
 
-# Print updated hash
+#   none will skip; "[key]" will prompt for new value and update hash
+if change_field != :none && change_field == :age || :budget || :kids
+      puts "Enter the new value:"
+      client[change_field] = gets.chomp.to_i
+elsif change_field != :none
+      puts "Enter the new value:"
+      client[change_field] = gets.chomp
+else puts "Thank you! Your new client has been added"
+    exit
+end
+
+p client[change_field]
+
+#Print updated hash
+puts "
+NEW CLIENT INFO:
+  Name:         #{client[:name]}
+  Age:          #{client[:age]}
+  # of Kids:    #{client[:kids]}
+  Decor Theme:  #{client[:decor_theme]}
+  Budget:       #{client[:budget]}
+  "
+
+
