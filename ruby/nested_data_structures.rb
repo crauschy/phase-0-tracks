@@ -63,4 +63,3 @@ p dance_event[:main_dance][:djs]
 p dance_event[:main_dance][:djs].reverse
 
 p dance_event[:afternoon_dance][:volunteers][0..1]
-
