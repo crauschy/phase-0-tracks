@@ -17,7 +17,7 @@
 
 # Get data:
 # NAME
-  puts "Enter client's Last name:"
+  puts "Client's last name:"
   client[:name] = gets.chomp
 
   puts "First name:"
@@ -56,22 +56,21 @@
   Would you like to change a field? Please type 'none' or which one:
       name, age, kids, decor_theme, budget"
   change_field = gets.chomp.to_sym
-  p change_field
 
 #   none will skip; "[key]" will prompt for new value and update hash
-if change_field != :none && change_field == :age || :budget || :kids
-      puts "Enter the new value:"
-      client[change_field] = gets.chomp.to_i
-elsif change_field != :none
-      puts "Enter the new value:"
-      client[change_field] = gets.chomp
-else puts "Thank you! Your new client has been added"
-    exit
+if change_field != :none
+  puts "Enter the new value:"
+  if change_field == :age || change_field == :budget || change_field == :kids
+    client[change_field] = gets.chomp.to_i
+  else
+    client[change_field] = gets.chomp
+  end
+else
+  puts "Thank you! Your new client has been added."
+  exit
 end
 
-p client[change_field]
-
-#Print updated hash
+# Print updated hash
 puts "
 NEW CLIENT INFO:
   Name:         #{client[:name]}
@@ -80,5 +79,6 @@ NEW CLIENT INFO:
   Decor Theme:  #{client[:decor_theme]}
   Budget:       #{client[:budget]}
   "
-
+puts "Thank you! Your new client has been added."
+exit
 
