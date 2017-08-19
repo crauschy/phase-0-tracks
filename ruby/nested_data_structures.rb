@@ -1,5 +1,3 @@
-#Once you've built it, print a few individual pieces of deeply nested data from the structure, showing that you know how to use multiple indexes or hash keys (or both) to access nested items. Try to demonstrate a few different types of access.
-
 dance_event = {
   afternoon_dance:{
     location:{
@@ -7,14 +5,11 @@ dance_event = {
       capacity: 400,
       floor_type: 'concrete',
       },
-    music:{
-      live: nil,
-      djs: [
-        'Dave',
-        'Kevin',
-        'Lauren'
-        ]
-      },
+    djs: [
+      'Dave',
+      'Kevin',
+      'Lauren'
+      ],
     volunteers: [
       'Margaret',
       'Michelle',
@@ -28,13 +23,10 @@ dance_event = {
       capacity: 300,
       floor_type: 'hardwood'
       },
-    music:{
-      live: 'Naomi and Her Handsome Devils',
-      djs: [
-        'Kevin'
-        'Cate'
-        ]
-      },
+    djs: [
+      'Kevin',
+      'Cate'
+      ],
     volunteers: [
       'Michelle',
       'Rachel',
@@ -48,17 +40,24 @@ dance_event = {
       capacity: '150',
       floor_type: 'hardwood'
       },
-    music:{
-      live: 'Taryn Newborne and the Real Deal',
-      djs: [
-        'Dave',
-        'Lauren'
-        ]
-      },
-    volunteers: [
+     djs: [
+      'Dave',
+      'Lauren'
+      ],
+     volunteers: [
       'Chris',
       'Margaret',
       'Ashley'
       ]
   }
 }
+
+p dance_event[:late_dance][:location]
+
+p dance_event[:late_dance][:location][:capacity]
+
+p dance_event[:main_dance][:djs]
+
+p dance_event[:main_dance][:djs].reverse
+
+p dance_event[:afternoon_dance][:volunteers][0..1]
