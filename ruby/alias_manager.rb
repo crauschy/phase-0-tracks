@@ -48,7 +48,21 @@ def make_alias(name)
 end
 
 
-
-
 #//////// DRIVER CODE ////////#
-p make_alias("Felicia Torres")
+
+# start loop
+# get name from user
+loop do
+  puts "Please enter the name for which you'd like an alias, or type 'quit' to exit:"
+  name = gets.chomp
+  # call make_alias method on name
+  if name == "quit"
+    puts "Thank you. Good bye."
+    exit
+  else
+    make_alias(name)
+    puts "#{name}'s alias is #{make_alias(name)}."
+  end
+# repeat loop until user types 'quit'
+end
+
