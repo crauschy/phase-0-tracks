@@ -46,12 +46,12 @@
 # Release 2: Insertion Sorting Method
 # an insertion sorting method goes through an array and if an element is smaller than the one to its left, it shifts
 
-#loop through array starting with the second element (E), compare E to the element to its left
-#if the left > E, shift the left element to the right
-  #continue to shift until either there is no element to the left or the element to the left is <= E
-  #insert E to this new position
-#repeat with the next element, E
-#until index = length of the array (and all elements are sorted)
+# Compare the next element X (i) to the latest addition to the sorted array (i-1);
+  # if X is less than the sorted (i-1)
+    # hold X aside and compare it to each value in sorted array (descending index)
+    # if X is less than the sorted (i-2), insert X into sorted array at i-2... and so on until X is >= i-whatever or i = 0
+  # if X is greater than or equal to sorted (i-1), insert X into sorted array at i
+# Until all elements of array have been sorted into sorted array.
 
 # Implement the sorting method in Ruby.
 
@@ -63,32 +63,27 @@ sorted = [array[0]]
 i = 1
 # Loop:
 # Pick the first element X, insert it into a new, sorted array.
-while i <= array.length
-  p i
+while i < array.length
   if array[i] < sorted[i-1]
-    s = i
-    p "test0"
+    s = i-1
+    p "flag0"
     loop do
-    #while array[i] < sorted[s-1]
-     s -= 1
-    #   if s == 0
-    #     sorted.insert(s,array[i])
-    #     p sorted
-    #     break
-    #   end
-      if array[i] >= sorted[s]
-        sorted.insert(s,array[i])
-        p "test1"
+      if s == 0
+        p "flag1"
+        sorted.insert(0,array[i])
         break
-      elsif s == 0
-        p "test2"
-        sorted.insert(s,array[i])
+      elsif array[i] >= sorted[s]
+        p "flag2"
+        sorted.insert(s+1,array[i])
         break
       else
+        p "flag3"
+        s -= 1
       end
     end
+
   else
-    puts "test3"
+    p "flag4"
     sorted.insert(i,array[i])
   end
   i += 1
@@ -96,12 +91,7 @@ while i <= array.length
   p sorted
 end
 
-# Compare the next element X (i) to the latest addition to the sorted array (i-1);
-  # if X is less than the sorted (i-1)
-    # hold X aside and compare it to each value in sorted array (descending index)
-    # if X is less than the sorted (i-2), insert X into sorted array at i-2... and so on until X is >= i-whatever or i = 0
-  # if X is greater than or equal to sorted (i-1), insert X into sorted array at i
-# Until all elements of array have been sorted into sorted array.
+
 
 
 
