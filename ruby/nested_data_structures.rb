@@ -1,24 +1,65 @@
-#Release 0: Implement a Simple Search
+dance_event = {
+  afternoon_dance:{
+    location:{
+      name: 'Grant Park Pavillion',
+      capacity: 400,
+      floor_type: 'concrete',
+      },
+    djs: [
+      'Dave',
+      'Kevin',
+      'Lauren'
+      ],
+    volunteers: [
+      'Margaret',
+      'Michelle',
+      'Rachel',
+      'Chris'
+      ]
+    },
+  main_dance:{
+     location:{
+      name: 'Mobtown Ballroom',
+      capacity: 300,
+      floor_type: 'hardwood'
+      },
+    djs: [
+      'Kevin',
+      'Cate'
+      ],
+    volunteers: [
+      'Michelle',
+      'Rachel',
+      'Cari',
+      'Dave'
+      ]
+    },
+  late_dance:{
+     location:{
+      name: 'CORE Dance Studio',
+      capacity: '150',
+      floor_type: 'hardwood'
+      },
+     djs: [
+      'Dave',
+      'Lauren'
+      ],
+     volunteers: [
+      'Chris',
+      'Margaret',
+      'Ashley'
+      ]
+  }
+}
 
-#write and print sample array
+p dance_event[:late_dance][:location]
 
-favorite_nums = [2,3,7,22,42,77]
-p favorite_nums
+p dance_event.keys
 
-#define method that returns indext of searched-for integer
+p dance_event[:late_dance][:location][:capacity]
 
-def search_array(favorite_nums,num)
-  #loop containing a conditional statement
-  iteration = 0
-  while iteration < favorite_nums.length
-    if num == favorite_nums[iteration]
-      return iteration
-    end
-    iteration += 1
-  end
-end
+p dance_event[:main_dance][:djs]
 
-#run and test method
-p search_array(favorite_nums,22)
+p dance_event[:main_dance][:djs].reverse
 
-p search_array(favorite_nums,45)
+p dance_event[:afternoon_dance][:volunteers][0..1]
