@@ -54,24 +54,30 @@ end
 # get name from user
 alias_database = {}
 loop do
-  puts "Please enter the name for which you'd like an alias, or type 'quit' to exit:"
+  puts "Enter the name for which you'd like an alias, or type 'quit':"
   name = gets.chomp
   # call make_alias method on name
   if name == "quit"
-    puts "Thank you. Good bye."
     break
   else
+    puts ""
     make_alias(name)
-    puts "#{name}'s alias is #{make_alias(name)}."
+    # puts "
+    # #{name}'s alias is #{make_alias(name)}."
+    #store name and resulting alias name
     alias_database[name] = make_alias(name)
-    p alias_database
   end
 # repeat loop until user types 'quit'
 end
+#print alias database
+puts "
+ALIAS DATABASE:"
+alias_database.each {|real,fake| puts "
+  #{real}'s alias is #{fake}."}
+puts "
+Have a nice day, whoever you are."
 
-alias_database.each {|real,fake| puts "#{real}'s alias is #{fake}."}
 
-#store name and resulting alias name -- push into hash where each key is a number and the values are name and alias
 
 
 
