@@ -2,9 +2,9 @@
 
 def make_alias(name)
   # get spy's name and convert to lowercase
-  name.downcase!
+  lowercase_name = name.downcase
   # split name string into array of first and last name
-  first_last = name.split(' ')
+  first_last = lowercase_name.split(' ')
   # reverse order of array elements
   first_last.reverse!
   # rejoin array elements to one string
@@ -52,17 +52,26 @@ end
 
 # start loop
 # get name from user
+alias_database = {}
 loop do
   puts "Please enter the name for which you'd like an alias, or type 'quit' to exit:"
   name = gets.chomp
   # call make_alias method on name
   if name == "quit"
     puts "Thank you. Good bye."
-    exit
+    break
   else
     make_alias(name)
     puts "#{name}'s alias is #{make_alias(name)}."
+    alias_database[name] = make_alias(name)
+    p alias_database
   end
 # repeat loop until user types 'quit'
 end
+
+alias_database.each {|real,fake| puts "#{real}'s alias is #{fake}."}
+
+#store name and resulting alias name -- push into hash where each key is a number and the values are name and alias
+
+
 
