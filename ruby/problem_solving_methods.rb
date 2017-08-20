@@ -57,10 +57,43 @@
 
 array = [5,3,1,8,7,12]
 #expected outcome: [1,3,5,7,8,12]
+p array
 
-#loop through array starting with the second element (E), compare E to the element to its left
-#if the left > E, shift the left element to the right
-  #continue to shift until either there is no element to the left or the element to the left is <= E
-  #insert E to this new position
-#repeat with the next element, E
-#until index = length of the array (and all elements are sorted)
+sorted = [array[0]]
+i = 1
+# Loop:
+# Pick the first element X, insert it into a new, sorted array.
+while i <= array.length
+  if array[i] < sorted[i-1]
+    s = i-1
+    while array[i] <= sorted[s]
+      s -= 1
+    end
+    sorted.insert(s,array[i])
+  else
+    sorted.insert(s,array[i])
+  end
+  i += 1
+end
+
+p array
+
+p sorted
+# Compare the next element X (i) to the latest addition to the sorted array (i-1);
+  # if X is less than the sorted (i-1)
+    # hold X aside and compare it to each value in sorted array (descending index)
+    # if X is less than the sorted (i-2), insert X into sorted array at i-2... and so on until X is >= i-whatever or i = 0
+  # if X is greater than or equal to sorted (i-1), insert X into sorted array at i
+# Until all elements of array have been sorted into sorted array.
+
+
+
+
+
+
+
+# Pick next element
+# Compare with all elements in the sorted sub-list
+# Shift all the elements in the sorted sub-list that is greater than the value to be sorted
+# Insert the value
+# Repeat until list is sorted
