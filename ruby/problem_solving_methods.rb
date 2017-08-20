@@ -1,3 +1,4 @@
+#Paired with Noah Krell
 #Release 0: Implement a Simple Search
 
 #write and print sample array
@@ -22,3 +23,17 @@ end
 p search_array(favorite_nums,22)
 
 p search_array(favorite_nums,45)
+
+#Release 1:
+
+def fib(num)
+ i = 0
+ numbers = [0, 1]
+ until i == num - 2
+  x = numbers[-1] + numbers[-2]
+  numbers.push(x)
+ i += 1
+ end
+ numbers
+end
+p fib(6)
