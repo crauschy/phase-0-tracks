@@ -64,21 +64,38 @@ i = 1
 # Loop:
 # Pick the first element X, insert it into a new, sorted array.
 while i <= array.length
+  p i
   if array[i] < sorted[i-1]
-    s = i-1
-    while array[i] <= sorted[s]
-      s -= 1
+    s = i
+    p "test0"
+    loop do
+    #while array[i] < sorted[s-1]
+     s -= 1
+    #   if s == 0
+    #     sorted.insert(s,array[i])
+    #     p sorted
+    #     break
+    #   end
+      if array[i] >= sorted[s]
+        sorted.insert(s,array[i])
+        p "test1"
+        break
+      elsif s == 0
+        p "test2"
+        sorted.insert(s,array[i])
+        break
+      else
+      end
     end
-    sorted.insert(s,array[i])
   else
-    sorted.insert(s,array[i])
+    puts "test3"
+    sorted.insert(i,array[i])
   end
   i += 1
+  p array
+  p sorted
 end
 
-p array
-
-p sorted
 # Compare the next element X (i) to the latest addition to the sorted array (i-1);
   # if X is less than the sorted (i-1)
     # hold X aside and compare it to each value in sorted array (descending index)
