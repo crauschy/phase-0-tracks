@@ -1,6 +1,6 @@
 #////// METHOD DECLARATIONS ///////#
 
-# Method to CREATE A LIST
+# METHOD TO CREATE A LIST
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
 def create_list(grocery_list)
@@ -17,10 +17,8 @@ def create_list(grocery_list)
 end
 # output: [hash]
 
-grocery_list = "carrots apples bananas eggs milk"
-list_1 = create_list(grocery_list)
 
-# Method to ADD AN ITEM to a list
+# METHOD TO ADD AN ITEM TO A LIST
 # input: list, item name, and optional quantity
 def add_item(list, item, quantity=1)
 # steps:
@@ -29,32 +27,44 @@ def add_item(list, item, quantity=1)
   # Return updated hash
   list
 end
-
-item = "pizza"
-quantity = 3
-
 # output: updated hash
-p add_item(list_1, item, quantity)
 
 
-# Method to remove an item from the list
+# METHOD TO REMOVE AN ITEM FROM THE LIST
 # input: list and item name
+def remove_item(list, item)
 # steps:
   # use delete method with key (item) as argument
+  list.delete(item)
   # return list
+  list
+end
 # output: updated hash
 
-# Method to update the quantity of an item
+# METHOD TO UPDATE THE QUANTITY OF AN ITEM
 # input:
 # steps:
 # output:
 
-# Method to print a list and make it look pretty
+# METHOD TO PRINT A LIST AND MAKE IT LOOK PRETTY
 # input:
 # steps:
 # output:
 
 #////// DRIVER CODE ///////#
+#TEST
+grocery_list = "carrots apples bananas eggs milk"
+list_1 = create_list(grocery_list)
+p list_1
+add_item = "pizza"
+quantity = 3
+puts "LIST AFTER ADDED ITEM:"
+p add_item(list_1, add_item, quantity)
+
+rm_item = "eggs"
+puts "LIST AFTER REMOVED ITEM:"
+p remove_item(list_1,rm_item)
+
 
 # # Ask user for list input
 # puts "Welcome to THE LIST MAKER!"
