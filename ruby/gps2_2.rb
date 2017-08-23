@@ -33,12 +33,16 @@ end
 item = "pizza"
 quantity = 3
 
-# output:
+# output: updated hash
 p add_item(list_1, item, quantity)
+
+
 # Method to remove an item from the list
-# input:
+# input: list and item name
 # steps:
-# output:
+  # use delete method with key (item) as argument
+  # return list
+# output: updated hash
 
 # Method to update the quantity of an item
 # input:
