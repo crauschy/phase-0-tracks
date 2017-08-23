@@ -3,7 +3,7 @@
 # METHOD TO CREATE A LIST
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
-def create_list(grocery_list)
+def create_list(title, grocery_list)
   # grocery_list will be a string from user
   # assign an empty hash (will eventually be the list)
   final_list = {}
@@ -13,6 +13,7 @@ def create_list(grocery_list)
   # set default quantity
   grocery_list.each { |item| final_list[item]=1}
   # print the list to the console [can you use one of your other methods here?]
+  puts print_list(title,final_list)
   final_list
 end
 # output: [hash]
@@ -40,6 +41,7 @@ def remove_item(list, item)
   list
 end
 # output: updated hash
+
 
 # METHOD TO UPDATE THE QUANTITY OF AN ITEM
 # input: list, item name, new quantity
@@ -72,37 +74,52 @@ def print_list(title,list)
 end
 # output: nil
 
+
+
 #////// DRIVER CODE ///////#
-#TEST CODE
-grocery_list = "carrots apples bananas eggs milk"
-list_1 = create_list(grocery_list)
-p list_1
-add_item = "pizza"
-quantity = 3
-puts "LIST AFTER ADDED ITEM:"
-p add_item(list_1, add_item, quantity)
 
-rm_item = "eggs"
-puts "LIST AFTER REMOVED ITEM:"
-p remove_item(list_1,rm_item)
+# Ask user for title and list input
+puts "Welcome to THE LIST MAKER!"
 
-new_quantity = 5
-item = "bananas"
-puts "LIST AFTER QUANTITY UPDATE:"
-p update_quantity(list_1, item, new_quantity)
+puts "What do you need to get at the grocery store?
+Type everything you need and then hit 'enter'."
+grocery_list = gets.chomp
+puts "What would you like to name your list?"
+title = gets.chomp
+# Call create_list method
+p create_list(grocery_list)
 
-title = "Cate's List"
-puts print_list(title,list_1)
+# Ask user if they'd like to ADD or REMOVE or UPDATE and item from list or type 'done';
+  # While not 'done':
+    # IF add, ask for quantity and item,update list hash; loop; must type 'done' when done adding
+    # IF remove, ask for item, and update list hash
+    # IF update, ask for new quantity and item, update hash; loop; must type 'done' when done updating
+  # loop until 'done'
+# If 'done', thank user and print updated list
 
-# # Ask user for list input
-# puts "Welcome to THE LIST MAKER!"
+puts "Do you need to add, remove, or update any quantities of items? y/n?"
 
-# puts "What do you need to get at the grocery store?
-# Type everything you need and then hit 'enter'."
 
-# grocery_list = gets.chomp
-# # Call create_list method
-# p create_list(grocery_list)
 
-# # Ask user if they would like to ADD or REMOVE or UPDATE and item from list; loop until 'done'
 
+
+# #TEST CODE
+# title = "Cate's List"
+# grocery_list = "carrots apples bananas eggs milk"
+# list_1 = create_list(title,grocery_list)
+# p list_1
+# add_item = "pizza"
+# quantity = 3
+# puts "LIST AFTER ADDED ITEM:"
+# p add_item(list_1, add_item, quantity)
+
+# rm_item = "eggs"
+# puts "LIST AFTER REMOVED ITEM:"
+# p remove_item(list_1,rm_item)
+
+# new_quantity = 5
+# item = "bananas"
+# puts "LIST AFTER QUANTITY UPDATE:"
+# p update_quantity(list_1, item, new_quantity)
+
+# puts print_list(title,list_1)
