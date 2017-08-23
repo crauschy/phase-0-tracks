@@ -53,12 +53,27 @@ end
 # output: updated hash
 
 # METHOD TO PRINT A LIST AND MAKE IT LOOK PRETTY
-# input:
+# input: title, list
+def print_list(title,list)
 # steps:
-# output:
+  # print title of list (will ask user for this input)
+  puts "**********************"
+  puts "  #{title.upcase}:"
+  puts "**********************"
+  # print headers of item and quantity
+  puts "   #    ITEM"
+  puts "----------------------"
+  # print each item and it's quantity, bulleted if possible
+  list.each {|item,quantity| puts "  #{quantity}    #{item}"}
+  puts "**********************"
+  # print today's date
+  date = Time.new
+  puts "  Made on: #{date.month}/#{date.day}/#{date.year}"
+end
+# output: nil
 
 #////// DRIVER CODE ///////#
-#TEST
+#TEST CODE
 grocery_list = "carrots apples bananas eggs milk"
 list_1 = create_list(grocery_list)
 p list_1
@@ -75,6 +90,10 @@ new_quantity = 5
 item = "bananas"
 puts "LIST AFTER QUANTITY UPDATE:"
 p update_quantity(list_1, item, new_quantity)
+
+title = "Cate's List"
+puts print_list(title,list_1)
+
 # # Ask user for list input
 # puts "Welcome to THE LIST MAKER!"
 
