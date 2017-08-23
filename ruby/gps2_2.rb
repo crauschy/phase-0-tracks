@@ -100,14 +100,15 @@ change = ""
   change = get.chomp!
       # IF add, ask for quantity and item,update list hash; loop; must type 'done' when done adding
       if change == "add"
-        puts "Type an item to add, or put 'done':"
+        puts "Type an item to add, or put 'done' to go back:"
         loop do
           add_item = gets.chomp
           if add_item != "done"
             puts "How many?"
-            add_quantity = gets.chomp
+            add_quantity = gets.chomp.to_i
             our_list = add_item(our_list, add_item, add_quantity=1)
-            puts "Item added. Type another item, or 'done' to exit."
+            puts "Item added.
+            Type another item, or 'done' to exit:"
           else
             puts print_list(our_list)
             break
@@ -115,19 +116,47 @@ change = ""
         end
       # IF remove, ask for item, and update list hash
       elsif change == "remove"
-        puts "Type the item you wish to remove or 'done' to exit."
+        puts "Type the item you wish to remove or 'done' to go back:"
         loop do
           rm_item = gets.chomp
-          if rm_item != "done"our_list =
+          if rm_item != "done"
+            our_list = remove_item(our_list,rm_item)
+            puts "Item removed.
+            Type another item to remove, or 'done' to exit:"
+          else
+            puts print_list(our_list)
+            break
+          end
+        end
       # IF update, ask for new quantity and item, update hash; loop; must type 'done' when done updating
       elsif change == "update"
+        puts "Type the item you'd like to update or 'done' to go back:"
+        loop do
+          upd_item = gets.chomp
+          if upd_item != "done"
+            puts "What is the correct quantity?"
+            new_quantity = gets.chomp.to_i
+            our_list = update_quantity(our_list)
+            puts "Item updated!
+            Type another item to update its quantity or 'done' to exit:"
+          else
+            puts print_list(our_list)
+            break
+          end
+        end
       else
-        puts "LIST MAKER did not understand your request"
-
+        puts "LIST MAKER did not understand your request."
+      end
+    end
   # loop until 'done'
-# If 'done', thank user and print updated list
+# When 'done', thank user and print updated list
+puts print_list(our_list)
 
-puts "Do you need to add, remove, or update any quantities of items? y/n?"
+puts "----------------------
+Thank you for using THE LIST MAKER!!!
+----------------------"
+
+
 
 
 
