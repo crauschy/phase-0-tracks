@@ -106,7 +106,7 @@ loop do
       if add_item != "done"
         puts "How many?"
         add_quantity = gets.chomp.to_i
-        our_list = add_item(our_list, add_item, add_quantity=1)
+        our_list = add_item(our_list, add_item, add_quantity)
         puts "Item added."
         puts "Type another item to add, or 'done' to exit:"
       else
@@ -152,10 +152,11 @@ loop do
 end
   # loop until 'done'
 # When 'done', thank user and print updated list
-puts puts print_list(title,our_list)
 puts "----------------------
 Thank you for using THE LIST MAKER!!!
 ----------------------"
+puts print_list(title,our_list)
+
 
 
 
