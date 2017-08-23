@@ -75,7 +75,6 @@ end
 # output: nil
 
 
-
 #////// DRIVER CODE ///////#
 
 # Ask user for title and list input
@@ -158,29 +157,16 @@ Thank you for using THE LIST MAKER!!!
 puts print_list(title,our_list)
 
 
-
-
-
-
-
-
-# #TEST CODE
-# title = "Cate's List"
-# grocery_list = "carrots apples bananas eggs milk"
-# list_1 = create_list(title,grocery_list)
-# p list_1
-# add_item = "pizza"
-# quantity = 3
-# puts "LIST AFTER ADDED ITEM:"
-# p add_item(list_1, add_item, quantity)
-
-# rm_item = "eggs"
-# puts "LIST AFTER REMOVED ITEM:"
-# p remove_item(list_1,rm_item)
-
-# new_quantity = 5
-# item = "bananas"
-# puts "LIST AFTER QUANTITY UPDATE:"
-# p update_quantity(list_1, item, new_quantity)
-
-# puts print_list(title,list_1)
+#//// REFLECTION ////#
+# What did you learn about pseudocode from working on this challenge?
+  # It really does lay the groundwork for the code and helps get my mind in the right place-- thinking about the big picture before digging into the nitty gritty. Sometimes it's a pain though, because at times, it's easier to think about the code itself instead of what the code is doing.
+# What are the tradeoffs of using arrays and hashes for this challenge?
+  # I only used an array at the beginning. One problem that occurred to me (using the split method) was, what if the user enters something like "bag of coffee"... I'm sure there's way to provide for that in the code, but I felt like it was outside the scope of this challenge. Good to think about those things though I guess :)
+# What does a method return?
+  # whatever is on its last line (unless an explicit return is declared)
+# What kind of things can you pass into methods as arguments?
+  # pretty much any object: methods themselves, strings, arrays, integers, hashes...
+# How can you pass information between methods?
+  # using common arguments; also, methods can be called within other methods.
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+  # Getting better with pseudocode and generally organizing my thinking. Driver code is by far more difficult/brain-twisting... I'm a bit of a perfectionist, so I spend too much time fixing things that don't matter (at this stage) and it burns me out. Need to know when to stop. But I'm loving that feeling of everything finally working!
