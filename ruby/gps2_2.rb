@@ -3,7 +3,7 @@
 # METHOD TO CREATE A LIST
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
-def create_list(title, grocery_list)
+def create_list(title, list_arr)
   # grocery_list will be a string from user
   # assign an empty hash (will eventually be the list)
   final_list = {}
@@ -21,7 +21,7 @@ end
 
 # METHOD TO ADD AN ITEM TO A LIST
 # input: list, item name, and optional quantity
-def add_item(list, item, quantity=1)
+def add_item(list, add_item, add_quantity=1)
 # steps:
   # Add item as key and quantity as value to final_list hash(item and quantity will be user inputs)
   list[item] = quantity
@@ -33,7 +33,7 @@ end
 
 # METHOD TO REMOVE AN ITEM FROM THE LIST
 # input: list and item name
-def remove_item(list, item)
+def remove_item(list, rm_item)
 # steps:
   # use delete method with key (item) as argument
   list.delete(item)
@@ -45,7 +45,7 @@ end
 
 # METHOD TO UPDATE THE QUANTITY OF AN ITEM
 # input: list, item name, new quantity
-def update_quantity(list, item, new_quantity)
+def update_quantity(list, upd_item, new_quantity)
 # steps:
   # reassign key (item) a new value (quantity)
   list[item] = new_quantity
@@ -83,17 +83,47 @@ puts "Welcome to THE LIST MAKER!"
 
 puts "What do you need to get at the grocery store?
 Type everything you need and then hit 'enter'."
-grocery_list = gets.chomp
+initial_list = gets.chomp
 puts "What would you like to name your list?"
 title = gets.chomp
 # Call create_list method
-p create_list(grocery_list)
+our_list = create_list(title,initial_list)
 
 # Ask user if they'd like to ADD or REMOVE or UPDATE and item from list or type 'done';
-  # While not 'done':
-    # IF add, ask for quantity and item,update list hash; loop; must type 'done' when done adding
-    # IF remove, ask for item, and update list hash
-    # IF update, ask for new quantity and item, update hash; loop; must type 'done' when done updating
+change = ""
+  while change != "done"
+  puts "Need to make a change? Type:
+    * 'add' to add something to your list
+    * 'remove' to delete something from your list
+    * 'update' to change the quantity of something, or
+    * 'done' if everything looks alright"
+  change = get.chomp!
+      # IF add, ask for quantity and item,update list hash; loop; must type 'done' when done adding
+      if change == "add"
+        puts "Type an item to add, or put 'done':"
+        loop do
+          add_item = gets.chomp
+          if add_item != "done"
+            puts "How many?"
+            add_quantity = gets.chomp
+            our_list = add_item(our_list, add_item, add_quantity=1)
+            puts "Item added. Type another item, or 'done' to exit."
+          else
+            puts print_list(our_list)
+            break
+          end
+        end
+      # IF remove, ask for item, and update list hash
+      elsif change == "remove"
+        puts "Type the item you wish to remove or 'done' to exit."
+        loop do
+          rm_item = gets.chomp
+          if rm_item != "done"our_list =
+      # IF update, ask for new quantity and item, update hash; loop; must type 'done' when done updating
+      elsif change == "update"
+      else
+        puts "LIST MAKER did not understand your request"
+
   # loop until 'done'
 # If 'done', thank user and print updated list
 
