@@ -42,9 +42,15 @@ end
 # output: updated hash
 
 # METHOD TO UPDATE THE QUANTITY OF AN ITEM
-# input:
+# input: list, item name, new quantity
+def update_quantity(list, item, new_quantity)
 # steps:
-# output:
+  # reassign key (item) a new value (quantity)
+  list[item] = new_quantity
+  # return list
+  list
+end
+# output: updated hash
 
 # METHOD TO PRINT A LIST AND MAKE IT LOOK PRETTY
 # input:
@@ -65,7 +71,10 @@ rm_item = "eggs"
 puts "LIST AFTER REMOVED ITEM:"
 p remove_item(list_1,rm_item)
 
-
+new_quantity = 5
+item = "bananas"
+puts "LIST AFTER QUANTITY UPDATE:"
+p update_quantity(list_1, item, new_quantity)
 # # Ask user for list input
 # puts "Welcome to THE LIST MAKER!"
 
