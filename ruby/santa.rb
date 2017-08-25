@@ -9,22 +9,8 @@ class Santa
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = rand(0..120)
   end
-
-  # # setter methods
-  # def gender=(new_gender)
-  #   @gender = new_gender
-  # end
-
-  # # getter methods
-  # def age
-  #   @age
-  # end
-
-  # def ethnicity
-  #   @ethnicity
-  # end
 
   # other methods
   def speak
@@ -50,32 +36,48 @@ end
 #//// DRIVER CODE ////#
 
 santas = []
-gender_options = ["female", "male", "bigender", "gender fluid", "other", "N/A"]
+gender_options = ["female", "male", "bigender", "agender", "gender fluid", "other", "N/A"]
 ethnicity_options = ["black", "latino", "white", "asian", "Pacific Islander", "N/A" ]
 
-gender_options.length.times do |index|
-  santas << Santa.new(gender_options[index], ethnicity_options[index])
+counter = 0
+while counter < rand(100..200)
+  santas << Santa.new(gender_options.sample, ethnicity_options.sample)
+  puts "##{counter + 1} #{santas[counter]}:
+  Gender: #{santas[counter].gender}
+  Age: #{santas[counter].age}
+  Ethnicity: #{santas[counter].ethnicity}
+  Reinder Preference: #{santas[counter].reindeer_ranking}
+  "
+  counter += 1
 end
 
-p santas[0]
 
-puts "Santa's ranking of reindeer BEFORE getting mad at Vixen:"
-p santas[0].reindeer_ranking
-santas[0].get_mad_at("Vixen")
-puts "Santa's ranking of reindeer AFTER getting mad at Vixen:"
-p santas[0].reindeer_ranking
+# EARLIER RELEASES
 
-puts "This santa was #{santas[0].age}."
+# gender_options.length.times do |index|
+#   santas << Santa.new(gender_options[index], ethnicity_options[index])
+# end
 
-santas[0].celebrate_birthday
+# #TEST CODE
+# p santas[0]
 
-puts "This santa is now #{santas[0].age}."
+# puts "Santa's ranking of reindeer BEFORE getting mad at Vixen:"
+# p santas[0].reindeer_ranking
+# santas[0].get_mad_at("Vixen")
+# puts "Santa's ranking of reindeer AFTER getting mad at Vixen:"
+# p santas[0].reindeer_ranking
 
-puts "This santa is not #{santas[0].gender}..."
-santas[0].gender=("bigender")
-puts "They are #{santas[0].gender}."
+# puts "This santa was #{santas[0].age}."
 
-puts "This santa is #{santas[0].ethnicity}."
+# santas[0].celebrate_birthday
+
+# puts "This santa is now #{santas[0].age}."
+
+# puts "This santa is not #{santas[0].gender}..."
+# santas[0].gender=("bigender")
+# puts "They are #{santas[0].gender}."
+
+# puts "This santa is #{santas[0].ethnicity}."
 
 
 
