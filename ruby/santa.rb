@@ -24,8 +24,12 @@ end
 
 #//// DRIVER CODE ////#
 
-santa_claus = Santa.new
+santas = []
+gender_options = ["female", "male", "bigender", "gender fluid", "other", "N/A"]
+ethnicity_options = ["black", "latino", "white", "asian", "Pacific Islander", "N/A" ]
 
-santa_claus.speak
+gender_options.length.times do |index|
+  santas << Santa.new(gender_options[index], ethnicity_options[index])
+end
 
-santa_claus.eat_milk_and_cookies("gingersnap")
+p santas
