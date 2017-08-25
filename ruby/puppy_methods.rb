@@ -45,13 +45,13 @@ end
 counter = 0
 red_pandas = []
 until counter == 50
-
-    idgy"#{counter+1}" = Red_Panda.new
-    red_pandas[counter] = "idgy#{counter+1}"
+    idgy0 = Red_Panda.new
     counter += 1
 end
+p Red_Panda
 puts "
 These are the red pandas:
+
 #{red_pandas}"
 red_pandas.each do |idgy|
     idgy.sleeping(idgy)
