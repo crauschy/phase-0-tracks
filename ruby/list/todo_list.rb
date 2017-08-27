@@ -7,9 +7,12 @@ class TodoList
   end
 
   def get_items
-    return @list
+    @list
   end
 
+  def add_item(new_item)
+    @list.push(new_item)
+  end
 
 end
 
