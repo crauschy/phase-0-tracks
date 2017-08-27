@@ -1,18 +1,47 @@
+# #////// DECLARATIONS //////#
+# module Shout
+#   # these will be some methods soon
+#   def self.yell_angrily(words)
+#     words + "!!!" + " :("
+#   end
+
+#   def self.yelling_happily(words)
+#     words + "!!!" + " :D"
+#   end
+# end
+
+
+# #////// DRIVER CODE //////#
+
+# p Shout.yell_angrily("What are you doing")
+
+# p Shout.yelling_happily("I'm so HAPPY")
+
 #////// DECLARATIONS //////#
 module Shout
   # these will be some methods soon
-  def self.yell_angrily(words)
+  def yell_angrily(words)
     words + "!!!" + " :("
   end
 
-  def self.yelling_happily(words)
+  def yelling_happily(words)
     words + "!!!" + " :D"
   end
+end
+
+class Coach
+  include Shout
+end
+
+class Monkey
+  include Shout
 end
 
 
 #////// DRIVER CODE //////#
 
-p Shout.yell_angrily("What are you doing")
+monkey = Monkey.new
+p monkey.yell_angrily("Give me all the bananas")
 
-p Shout.yelling_happily("I'm so HAPPY")
+coach = Coach.new
+p coach.yelling_happily("Yes, you can")
