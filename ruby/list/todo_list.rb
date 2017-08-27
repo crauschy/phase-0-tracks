@@ -14,6 +14,14 @@ class TodoList
     @list.push(new_item)
   end
 
+  def delete_item(old_item)
+    @list.delete(old_item)
+    @list
+  end
+
+  def get_item(i)
+    @list[i]
+  end
 end
 
 
