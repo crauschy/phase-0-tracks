@@ -35,6 +35,14 @@ class WordGame
     # IF player2_word == player1_word, do congratulate method
 
   # Process Word Method (only for guesses included in @word)
+    # Do I even need a process for this? Maybe just in driver code, if guess is > 1:
+    #Word method
+      # if guess == word Game over/ break loop
+      # if guess length doesn't = word length, try again, without losing a guess
+      # if guess length == word length but guess != word, lose guess count and loop
+
+  # Process Letter Method
+
   def process_guess(guess)
     # IF guess.length > 1
     if guess.length > 1
