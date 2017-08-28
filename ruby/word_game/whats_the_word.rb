@@ -7,12 +7,12 @@ class WordGame
   # Read over_lost
   # Read and write player_2_word
   attr_reader :word
-  attr_reader :over_won
-  attr_reader :over_lost
   attr_reader :number_of_guesses
   attr_accessor :counter
   attr_accessor :player2_word
   attr_accessor :already_guessed
+  attr_accessor :over_won
+  attr_accessor :over_lost
 
   # Initialize method(word)
   def initialize(word)
@@ -60,18 +60,24 @@ class WordGame
       end
       index += 1
     end
+    puts "SUCCESS!"
     @player2_word = @player2_word.join
   end
 
   def is_over
+
     if @over_won
-      puts "CONGRATULATIONS!!!"
-      puts "Player 1's word was: #{@word} and you guessed it in #{@counter} tries. You're a rock star."
+      puts "CONGRATULATIONS!!!
+      Player 1's word was: #{@word.upcase},
+      And you guessed it in #{@counter} tries!
+      You're a ROCK STAR!"
       "won"
+
     else
-      puts "You lose. You used up all #{@number_of_guesses} guesses and still couldn't figure it out."
-      puts "Player 1's word was: #{@word}"
-      puts "Better luck next time."
+      puts "WOMP, WoMp, wOmp, wommmp...
+      You lose. You used up all #{@number_of_guesses} guesses and still couldn't figure it out.
+      Player 1's word was: #{@word}
+      Better luck next time :("
       "lost"
     end
   end
@@ -88,7 +94,6 @@ puts "Player 1, pick a word, any word (Player 2, don't peek!):"
 word = gets.chomp
 game = WordGame.new(word)
 
-p game.word
 # Hide word from Player two
 puts "Hit 'return' until your word is out of view, then type 'done'."
 hide_word = ""
@@ -106,7 +111,7 @@ You can either guess one letter at a time or, if you think you know it, you can 
 If you understand the stakes and are ready to play, hit 'enter'!"
 
 # Game Play Loop
-# until over_won || over_lost
+until game.over_won || game.over_lost
 
   guesses_left = game.number_of_guesses - game.counter
 
@@ -129,15 +134,25 @@ If you understand the stakes and are ready to play, hit 'enter'!"
   end
 
   # Store guess
+  game.counter += 1
   game.already_guessed << guess
 
   if guess.length == game.word.length
     game.word_guess(guess)
-  else
+  elsif game.word.include?(guess)
     game.letter_guess(guess)
+  else
+    puts "Sorry. The word does not contain #{guess}."
+    game.player2_word
   end
 
-  p game.player2_word
-  # If guess length is > 1 elsif == 1 else, try again (no increase in guess count)
-  # Run Process Guess Method
-  # Print Congratulatory message
+  if game.player2_word == game.word
+    game.over_won = true
+  elsif game.counter == game.number_of_guesses
+    game.over_lost = true
+  end
+end
+
+game.is_over
+
+
