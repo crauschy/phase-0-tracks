@@ -27,13 +27,6 @@ class WordGame
     # define guess_count (word length + 2)
     @guess_count = word.length + 2
   end
-  # Congratulate Method
-    # Print word and Congratulate winner.
-
-  # Check For Win Method
-    # takes player2_word as argument (which will update as guesses populate)
-    # IF player2_word == player1_word, do congratulate method
-
   # Process Word Method (only for guesses included in @word)
 
     #Word method
@@ -66,19 +59,23 @@ class WordGame
     end
     @player2_word = @player2_word.join
   end
+
+  def is_over
+    if @over_won
+      puts "CONGRATULATIONS!!!"
+      puts "Player 1's word was: #{@word} and you guessed it in #{@guess_count}. You're a rock star."
+      "won"
+    else
+      puts "You lose. You used up all #{@guess_count} guesses and still couldn't figure it out."
+      puts "Player 1's word was: #{@word}"
+      puts "Better luck next time."
+      "lost"
+    end
+  end
+
 end
 
-
-
-
-    # ELSIF guess is included in word, insert/replace at the right indexes in empty guess_word
-      # Increase guess_count by 1
-    # ELSIF letter is not included
-  # Check for Win Method (player 2 word as argument)
-
-
 # DRIVER CODE
-
 
 # Welcome Message
 
