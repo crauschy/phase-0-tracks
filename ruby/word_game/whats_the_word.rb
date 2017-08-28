@@ -35,7 +35,7 @@ class WordGame
     # IF player2_word == player1_word, do congratulate method
 
   # Process Word Method (only for guesses included in @word)
-    # Do I even need a process for this? Maybe just in driver code, if guess is > 1:
+
     #Word method
       # if guess == word Game over/ break loop
       # if guess length doesn't = word length, try again, without losing a guess
@@ -43,29 +43,30 @@ class WordGame
 
   # Process Letter Method
 
-  def process_guess(guess)
+  def word_guess(guess)
     # IF guess.length > 1
-    if guess.length > 1
-      if guess == word
-        #improve congrats... maybe a method?
-        @over_won = true
-      else
-        puts "That is not the word."
-        @player2_word
-      end
+    if guess == @word
+      #improve congrats... maybe a method?
+      @over_won = true
     else
-      #Split player2_word into array to compare guessed letter
-      @player2_word.split!
-      index = 0
-      while index < @word.length
-        if guess == @word[index]
-          @player2_word[index] = guess
-        end
-        index += 1
-      end
-      @player2_word = @player2_word.join
+      puts "That is not the correct word."
+      @player2_word
     end
   end
+
+  def letter_guess(guess)
+    #Split player2_word into array to compare guessed letter
+    @player2_word.split!
+    index = 0
+    while index < @word.length
+      if guess == @word[index]
+        @player2_word[index] = guess
+      end
+      index += 1
+    end
+    @player2_word = @player2_word.join
+  end
+end
 
 
 
@@ -74,9 +75,10 @@ class WordGame
       # Increase guess_count by 1
     # ELSIF letter is not included
   # Check for Win Method (player 2 word as argument)
-end
+
 
 # DRIVER CODE
+
 
 # Welcome Message
 
@@ -84,6 +86,10 @@ end
 
 # Print the player2_word (first one will be ******)
 # Print how many guesses Player 2 has.
-# Ask for guess letter or guess word
-# Run Process Guess Method
-# Print Congratulatory message
+# LOOP
+  # Ask for guess letter or guess word
+  # If guess.length != (1 || word.length)
+  # LOOP
+  # If guess length is > 1 elsif == 1 else, try again (no increase in guess count)
+  # Run Process Guess Method
+  # Print Congratulatory message

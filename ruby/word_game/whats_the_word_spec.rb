@@ -5,10 +5,10 @@
 require_relative 'whats_the_word'
 
 describe WordGame do
-  let(:word) { WordGame.new("testing") }
+  let(:game) { WordGame.new("testing") }
 
-  it "initializes all beginning states of the new game" do
-    expect(word.initialize("testing")).to eq 6
+  it "compares guess of the correct length to word" do
+    expect(game.word_guess("testing")).to eq true
   end
     # define empty player2_word (string or array?) the same length as @word
     # define guess (letter/word player 2 guesses)
