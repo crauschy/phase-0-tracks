@@ -78,10 +78,26 @@ end
 # DRIVER CODE
 
 # Welcome Message
-
+puts "Welcome to 'What's The Word' Game!"
 # Get word string from Player 1; initialize as new instance of WordGame class
+puts "Player 1, pick a word, any word (Player 2, don't peek!):"
+
+word = gets.chomp
+
+puts "Hit 'return' until your word is out of view, then type 'done'."
+hide_word = ""
+until hide_word == "done"
+  hide_word = gets.chomp
+end
+
+puts "Player 2 can now look at the screen."
+puts "Player 2, do NOT scroll up: Cheaters never prosper!"
+
+
+# game = WordGame.new(word)
 
 # Print the player2_word (first one will be ******)
+puts "Player 2"
 # Print how many guesses Player 2 has.
 # LOOP
   # Ask for guess letter or guess word
