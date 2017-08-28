@@ -6,9 +6,11 @@ class WordGame
   # Read over_won
   # Read over_lost
   # Read and write player_2_word
-  attr_reader :guess_count
+  attr_reader :word
   attr_reader :over_won
   attr_reader :over_lost
+  attr_reader :number_of_guesses
+  attr_accessor :counter
   attr_accessor :player2_word
   attr_accessor :already_guessed
 
@@ -25,7 +27,8 @@ class WordGame
     # define empty array
     @already_guessed = []
     # define guess_count (word length + 2)
-    @guess_count = word.length + 2
+    @counter = 0
+    @number_of_guesses = word.length + 2
   end
   # Process Word Method (only for guesses included in @word)
 
@@ -63,10 +66,10 @@ class WordGame
   def is_over
     if @over_won
       puts "CONGRATULATIONS!!!"
-      puts "Player 1's word was: #{@word} and you guessed it in #{@guess_count}. You're a rock star."
+      puts "Player 1's word was: #{@word} and you guessed it in #{@counter} tries. You're a rock star."
       "won"
     else
-      puts "You lose. You used up all #{@guess_count} guesses and still couldn't figure it out."
+      puts "You lose. You used up all #{@number_of_guesses} guesses and still couldn't figure it out."
       puts "Player 1's word was: #{@word}"
       puts "Better luck next time."
       "lost"
@@ -79,30 +82,62 @@ end
 
 # Welcome Message
 puts "Welcome to 'What's The Word' Game!"
+
 # Get word string from Player 1; initialize as new instance of WordGame class
 puts "Player 1, pick a word, any word (Player 2, don't peek!):"
-
 word = gets.chomp
+game = WordGame.new(word)
 
+p game.word
+# Hide word from Player two
 puts "Hit 'return' until your word is out of view, then type 'done'."
 hide_word = ""
 until hide_word == "done"
   hide_word = gets.chomp
 end
 
-puts "Player 2 can now look at the screen."
-puts "Player 2, do NOT scroll up: Cheaters never prosper!"
-
-
-# game = WordGame.new(word)
+puts "Player 2, you can now look at the screen."
+puts "Please, do NOT scroll up: remember, cheaters NEVER prosper!
+"
 
 # Print the player2_word (first one will be ******)
-puts "Player 2"
-# Print how many guesses Player 2 has.
-# LOOP
-  # Ask for guess letter or guess word
-  # If guess.length != (1 || word.length)
-  # LOOP
+puts "The chosen word is #{game.word.length}, so you will have #{game.number_of_guesses} guesses.
+You can either guess one letter at a time or, if you think you know it, you can guess the whole word!
+If you understand the stakes and are ready to play, hit 'enter'!"
+
+# Game Play Loop
+# until over_won || over_lost
+
+  guesses_left = game.number_of_guesses - game.counter
+
+  # Print progress how many guesses Player 2 has left.
+  puts "So far, you have:   #{game.player2_word}"
+  puts "And you have #{guesses_left} guesses left."
+  puts "Type the letter or word you would like to guess and hit 'enter':"
+
+  # Make sure guess is valid and not a repeat
+  guess_valid = false
+  until guess_valid
+    guess = gets.chomp
+    if game.already_guessed.include?(guess)
+      puts "You've aready guessed that, silly. Try something new."
+    elsif (guess.length == 1 || guess.length == game.word.length)
+      guess_valid = true
+    else
+      puts "You seem to have mistyped. Type either 1 LETTER or a word that is #{game.word.length} letters long:"
+    end
+  end
+
+  # Store guess
+  game.already_guessed << guess
+
+  if guess.length == game.word.length
+    game.word_guess(guess)
+  else
+    game.letter_guess(guess)
+  end
+
+  p game.player2_word
   # If guess length is > 1 elsif == 1 else, try again (no increase in guess count)
   # Run Process Guess Method
   # Print Congratulatory message
