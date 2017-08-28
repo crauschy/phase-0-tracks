@@ -56,7 +56,7 @@ class WordGame
 
   def letter_guess(guess)
     #Split player2_word into array to compare guessed letter
-    @player2_word.split!
+    @player2_word = @player2_word.split("")
     index = 0
     while index < @word.length
       if guess == @word[index]
