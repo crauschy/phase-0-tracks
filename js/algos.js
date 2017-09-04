@@ -13,8 +13,9 @@ function longestWord(array){
   };
   return winner;
 }
-
+console.log("The longest element of")
 console.log(ary)
+console.log("is:")
 console.log((longestWord(ary)))
 
 // The above works in repl.it.... I don't know why it's not working on node in command line :(
