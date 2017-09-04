@@ -100,3 +100,9 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# -- one of the hashes uses a hash rocket, the interior hash uses symbols
+# -- require_relative allows you to link/refer to another document in the same directory; require links/refers to a library/directory already included in Ruby, but that needs to be loaded to use.
+# -- .each, .map, .each_value, etc.
+# -- there seem to be a lot of variables whose values are directly related to constant values from our state data doc... population and population_density. It almost seems unnecessary to have such complicated methods in some of these cases...
+# -- refactoring directly related values; creating new instances of a class that has nested data that needs to be passed in at initialization
