@@ -32,49 +32,23 @@ function longestWord(array){
 
 function doTheyShare(object1,object2){
 //(Object.keys(arr)) returns array of keys...
-  object1Keys = [Object.keys(object1)];
-  object2Keys = [Object.keys(object2)];
-  matchedKeys = [];
-  length1 = object1Keys.length;
-  length2 = object2Keys.length;
-
-  for (var i = 0; i < length1 ; i++){
-    var compareKey = object1Keys[i];
-    console.log(compareKey);
-    for (var x = 0; x < length2 ; x++){
-      if (compareKey == object2Keys[x]){
-        matchedKeys.push(compareKey);
+  for (var prop in object1){
+    if (object2[prop]){
+      if (object1[prop] == object2[prop]){
+        console.log(prop + " values match!");
+        return true;
       };
-    };
+    }
+    else{
+      console.log("${prop} doesn't match.");
+    }
   };
-  console.log(matchedKeys);
-}
+  return false
+};
 
 
 
-//   console.log("checking " + object1Keys[i] + "...");
-//     for (var i2 = 0; i2 < object2Keys.length ; i2++){
-//       if (object1Keys[i1] == object2Keys[i2]){
-//         console.log(object1Keys[i1] + " matches...");
-//         var key = object1Keys[i1];
-//         if (object1[key] == object2[key]){
-//           console.log("and so do their values.");
-//           matchedKeys.push(key);
-//           console.log("Matched so far: " + matchedKeys);
-//         }
-//         else {
-//           console.log(" but values don't match.");
-//         };
-//       };
-//     };
-//   };
-//   if (matchedKeys.length > 0){
-//     return true;
-//   }
-//   else {
-//     return false;
-//   };
-// };
+
 
 
 
@@ -116,8 +90,8 @@ var person1 = {name: "Cate", age: 29, city: "Atlanta"}
 var person2 = {name: "Maria", age: 29, city: "Miami"}
 var person3 = {name: "Erica", age: 15, city: "New York"}
 
-console.log("Do person1 and person2 share any traits?")
-console.log(doTheyShare(person1,person2))
+console.log("Do person1 and person3 share any traits?")
+console.log(doTheyShare(person1,person3))
 
 
 
