@@ -64,8 +64,11 @@ function wordArray(n){
 
 
 // So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. (This involves a new trick, generating a random number, that you'll have to look up, but the solution on how to do so is relatively straightforward.)
+
+
 /////////////// DRIVER CODE ///////////////
 
+// RELEASE 1
 var person1 = {name: "Cate", age: 29, city: "Atlanta"}
 var person2 = {name: "Maria", age: 29, city: "Miami"}
 var person3 = {name: "Erica", age: 15, city: "Miami"}
@@ -91,4 +94,13 @@ console.log(doTheyShare(dog1,dog3))
 
 console.log("Do dog2 and dog3 share any traits?")
 console.log(doTheyShare(dog2,dog3))
+
+// RELEASE 2
+
+console.log("This is a random array of 3 words:")
+console.log(wordArray(3))
+
+console.log("This is a random array of 5 words:")
+console.log(wordArray(5))
+
 
