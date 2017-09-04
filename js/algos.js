@@ -1,4 +1,4 @@
-var ary = ["cat", "horse", "elephant"];
+
 
 function longestWord(array){
   var winner = array[0];
@@ -13,9 +13,17 @@ function longestWord(array){
   };
   return winner;
 }
-console.log("The longest element of")
-console.log(ary)
-console.log("is:")
-console.log((longestWord(ary)))
 
-// The above works in repl.it.... I don't know why it's not working on node in command line :(
+
+
+var ary1 = ["cat", "horse", "elephant"];
+var ary2 = ["this is long", "this is longer", "this is longest", "or maybe this is longest"];
+
+console.log("The longest element of")
+console.log(ary1)
+console.log("is:")
+console.log((longestWord(ary1)))
+
+console.log("The longest element of ary2 is:")
+console.log((longestWord(ary2)))
+
