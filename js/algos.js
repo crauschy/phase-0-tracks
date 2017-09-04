@@ -96,11 +96,14 @@ console.log("Do dog2 and dog3 share any traits?")
 console.log(doTheyShare(dog2,dog3))
 
 // RELEASE 2
+for (i=0; i<10; i++){
+  n = Math.floor(Math.random() * 6) + 1;
+  array = wordArray(n);
+  console.log("Group " + (i+1) + ": " + array);
+  longestWord(array);
+  console.log("   Longest Word: " + longestWord(array));
+}
 
-console.log("This is a random array of 3 words:")
-console.log(wordArray(3))
 
-console.log("This is a random array of 5 words:")
-console.log(wordArray(5))
 
 
