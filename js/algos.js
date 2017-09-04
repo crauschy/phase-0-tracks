@@ -34,4 +34,30 @@ function longestWord(array){
 // once a value ever matches, break loop and return true
 // if no values match, return false
 
-function doTheyShare(object1,object2)
+// for each key of object 1, compare it to each key of object 2, storing the keys that exist in both
+
+function doTheyShare(object1,object2){
+//(Object.keys(arr)) returns array of keys...
+  object1Keys = [Object.keys(object1)];
+  object2Keys = [Object.keys(object2)];
+  matchedKeys = [];
+  object1Keys.forEach(function(item, index, array){
+    for (i = 0; i < object2Keys.length ; i++){
+      if (item == object2Keys[i]){
+        if (object1[item] == object2[item]){
+          matchedKeys.push(item);
+        };
+      };
+    }
+  });
+  if (matchedKeys.length > 0){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+
+console.log(doTheyShare({name: "Steven", age: 54}, {name: "Tamir", age: 54}))
+
