@@ -17,8 +17,6 @@ storage.push((reverse("cate")));
 
 storage.push((reverse("bootcamp")));
 
-console.log(storage);
-
 if (0 < 1) {
-  console.log(storage)
+  console.log(storage);
 }
