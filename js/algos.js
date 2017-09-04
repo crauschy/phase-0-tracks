@@ -46,39 +46,24 @@ function doTheyShare(object1,object2){
   return false
 };
 
-
-// First attempt mess:
-// function doTheyShare(object1,object2){
-// //(Object.keys(arr)) returns array of keys...
-//   object1Keys = [Object.keys(object1)];
-//   object2Keys = [Object.keys(object2)];
-//   matchedKeys = [];
-//   for (var i1 = 0; i1 < object1Keys.length ; i1++){
-//   console.log("checking " + object1Keys[i1] + "...");
-//     for (var i2 = 0; i2 < object2Keys.length ; i2++){
-//       if (object1Keys[i1] == object2Keys[i2]){
-//         console.log(object1Keys[i1] + " matches...");
-//         var key = object1Keys[i1];
-//         if (object1[key] == object2[key]){
-//           console.log("and so do their values.");
-//           matchedKeys.push(key);
-//           console.log("Matched so far: " + matchedKeys);
-//         }
-//         else {
-//           console.log(" but values don't match.");
-//         };
-//       };
-//     };
-//   };
-//   if (matchedKeys.length > 0){
-//     return true;
-//   }
-//   else {
-//     return false;
-//   };
-// };
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length.
+function wordArray(n){
+  var words = [];
+  while (n > 0){
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    var randomWord = "";
+    var wordLength = Math.floor(Math.random() * 11) + 1;
+    for (var i = 0; i < wordLength; i++){
+      randomWord += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+    };
+    words.push(randomWord);
+    n--;
+  };
+  return words
+};
 
 
+// So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. (This involves a new trick, generating a random number, that you'll have to look up, but the solution on how to do so is relatively straightforward.)
 /////////////// DRIVER CODE ///////////////
 
 var person1 = {name: "Cate", age: 29, city: "Atlanta"}
