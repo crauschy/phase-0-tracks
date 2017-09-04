@@ -40,19 +40,14 @@ function doTheyShare(object1,object2){
       };
     }
     else{
-      console.log("${prop} doesn't match.");
+      console.log(prop + " doesn't match.");
     }
   };
   return false
 };
 
 
-
-
-
-
-
-
+// First attempt mess:
 // function doTheyShare(object1,object2){
 // //(Object.keys(arr)) returns array of keys...
 //   object1Keys = [Object.keys(object1)];
@@ -88,10 +83,27 @@ function doTheyShare(object1,object2){
 
 var person1 = {name: "Cate", age: 29, city: "Atlanta"}
 var person2 = {name: "Maria", age: 29, city: "Miami"}
-var person3 = {name: "Erica", age: 15, city: "New York"}
+var person3 = {name: "Erica", age: 15, city: "Miami"}
+
+console.log("Do person1 and person2 share any traits?")
+console.log(doTheyShare(person1,person2))
 
 console.log("Do person1 and person3 share any traits?")
 console.log(doTheyShare(person1,person3))
 
+console.log("Do person2 and person3 share any traits?")
+console.log(doTheyShare(person2,person3))
 
+var dog1 = {name: "Carlos", color: "black", age: 4}
+var dog2 = {name: "Leo", breed: "black lab", legs: 4}
+var dog3 = {name: "Soots", breed: "black lab", age: 10}
+
+console.log("Do dog1 and dog2 share any traits?")
+console.log(doTheyShare(dog1,dog2))
+
+console.log("Do dog1 and dog3 share any traits?")
+console.log(doTheyShare(dog1,dog3))
+
+console.log("Do dog2 and dog3 share any traits?")
+console.log(doTheyShare(dog2,dog3))
 
