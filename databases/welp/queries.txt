@@ -1,0 +1,52 @@
+2. QUERY
+
+  sqlite> SELECT * FROM reviews, businesses WHERE reviews.business_id = businesses.id;
+
+  1|5|Great light!|1|2|1|Grundy Hollow Wedding Chapel
+  2|4|Very All-American!|2|1|2|The Beagle Nightclub
+  3|3|Meh.|3|3|3|Lotus Yoga
+
+OR
+
+  sqlite> SELECT reviews.stars, reviews.comment, businesses.name, users.first_name
+     ...> FROM reviews
+     ...> JOIN businesses ON reviews.business_id = businesses.id
+     ...> JOIN users ON reviews.users_id = users.id;
+
+  5|Great light!|Grundy Hollow Wedding Chapel|Mandy
+  4|Very All-American!|The Beagle Nightclub|Bradford
+  3|Meh.|Lotus Yoga|Holly
+
+
+
+3. QUERY
+
+  sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+     ...> FROM reviews
+     ...> JOIN businesses ON reviews.business_id = businesses.id
+     ...> JOIN users ON reviews.users_id = users.id;
+
+  Mandy|Kaling|Grundy Hollow Wedding Chapel|5|Great light!
+  Bradford|Pitt|The Beagle Nightclub|4|Very All-American!
+  Holly|Berry|Lotus Yoga|3|Meh.
+
+
+5. QUERY
+
+  sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+     ...> FROM reviews, businesses, users
+     ...> WHERE businesses.id = reviews.business_id AND
+     ...> reviews.business_id = 3 AND
+     ...> users.id = reviews.users_id;
+
+  Holly|Berry|Lotus Yoga|3|Meh.
+  Mandy|Kaling|Lotus Yoga|4|Great!
+
+
+  sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+     ...> FROM  reviews
+     ...> JOIN businesses ON (businesses.id = reviews.business_id AND reviews.business_id = 3)
+     ...> JOIN users ON (users.id = reviews.users_id);
+
+  Holly|Berry|Lotus Yoga|3|Meh.
+  Mandy|Kaling|Lotus Yoga|4|Great!
