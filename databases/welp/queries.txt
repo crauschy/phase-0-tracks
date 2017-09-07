@@ -1,0 +1,8 @@
+sqlite> SELECT reviews.stars, reviews.comment, businesses.name, users.first_name
+   ...> FROM reviews
+   ...> JOIN businesses ON reviews.business_id = businesses.id
+   ...> JOIN users ON reviews.users_id = users.id;
+5|Great light!|Grundy Hollow Wedding Chapel|Mandy
+4|Very All-American!|The Beagle Nightclub|Bradford
+3|Meh.|Lotus Yoga|Holly
+sqlite>
