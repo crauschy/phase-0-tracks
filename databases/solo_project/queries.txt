@@ -1,0 +1,82 @@
+1. sqlite> SELECT * FROM tours;
+
+  1|Basque in the Glory|NE Spain|Jason
+  2|Camino de Santiago|Spain|Alex
+  3|Beautiful Barcelona|Barcelona|Cate
+  4|Anda, Andalucia!|Southern Spain|Jason
+  5|The Portuguese Camino|Portugal|Cate
+  6|Camino de Santiago|Spain|Rick
+
+
+2. sqlite> UPDATE tours SET guide="Rick" WHERE name="Anda, Andalucia!";
+
+  sqlite> SELECT * FROM tours;
+  1|Basque in the Glory|NE Spain|Jason
+  2|Camino de Santiago|Spain|Alex
+  3|Beautiful Barcelona|Barcelona|Cate
+  4|Anda, Andalucia!|Southern Spain|Rick
+  5|The Portuguese Camino|Portugal|Cate
+  6|Camino de Santiago|Spain|Rick
+
+
+3. sqlite> SELECT * FROM tour_participants, tours WHERE tour_participants.tour_id = tours.id;
+
+    1|Dave Barry|28|true|3|3|Beautiful Barcelona|Barcelona|Cate
+    2|John Locke|36|true|5|5|The Portuguese Camino|Portugal|Cate
+    3|Hermione Granger|38|true|3|3|Beautiful Barcelona|Barcelona|Cate
+    4|Harry Potter|45|false|2|2|Camino de Santiago|Spain|Alex
+    5|Ginny Potter|43|false|2|2|Camino de Santiago|Spain|Alex
+    6|Steph Adams|25|false|1|1|Basque in the Glory|NE Spain|Jason
+    7|Ignacio Alvarez|25|false|1|1|Basque in the Glory|NE Spain|Jason
+    8|Catarina Rau|30|true|4|4|Anda, Andalucia!|Southern Spain|Rick
+    9|Richard Vale|31|false|6|6|Camino de Santiago|Spain|Rick
+    10|Sandra Vale|33|false|6|6|Camino de Santiago|Spain|Rick
+
+  OR
+
+  sqlite> SELECT tour_participants.name, tour_participants.age, tour_participants.private_room, tours.name, tours.location, tours.guide
+     ...> FROM tour_participants
+     ...> JOIN tours ON
+     ...> tour_participants.tour_id = tours.id
+     ...> ;
+
+    Dave Barry|28|true|Beautiful Barcelona|Barcelona|Cate
+    John Locke|36|true|The Portuguese Camino|Portugal|Cate
+    Hermione Granger|38|true|Beautiful Barcelona|Barcelona|Cate
+    Harry Potter|45|false|Camino de Santiago|Spain|Alex
+    Ginny Potter|43|false|Camino de Santiago|Spain|Alex
+    Steph Adams|25|false|Basque in the Glory|NE Spain|Jason
+    Ignacio Alvarez|25|false|Basque in the Glory|NE Spain|Jason
+    Catarina Rau|30|true|Anda, Andalucia!|Southern Spain|Rick
+    Richard Vale|31|false|Camino de Santiago|Spain|Rick
+    Sandra Vale|33|false|Camino de Santiago|Spain|Rick
+
+
+4. sqlite> SELECT tour_participants.name, tour_participants.age, tours.name, tours.guide
+   ...> FROM tour_participants
+   ...> JOIN tours ON tour_participants.tour_id = tours.id;
+
+    Dave Barry|28|Beautiful Barcelona|Cate
+    John Locke|36|The Portuguese Camino|Cate
+    Hermione Granger|38|Beautiful Barcelona|Cate
+    Harry Potter|45|Camino de Santiago|Alex
+    Ginny Potter|43|Camino de Santiago|Alex
+    Steph Adams|25|Basque in the Glory|Jason
+    Ignacio Alvarez|25|Basque in the Glory|Jason
+    Catarina Rau|30|Anda, Andalucia!|Rick
+    Richard Vale|31|Camino de Santiago|Rick
+    Sandra Vale|33|Camino de Santiago|Rick
+
+
+5. sqlite> DELETE FROM tour_participants WHERE name="John Locke";
+sqlite> SELECT * FROM tour_participants;
+
+    1|Dave Barry|28|true|3
+    3|Hermione Granger|38|true|3
+    4|Harry Potter|45|false|2
+    5|Ginny Potter|43|false|2
+    6|Steph Adams|25|false|1
+    7|Ignacio Alvarez|25|false|1
+    8|Catarina Rau|30|true|4
+    9|Richard Vale|31|false|6
+    10|Sandra Vale|33|false|6
