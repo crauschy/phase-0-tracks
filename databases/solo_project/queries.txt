@@ -80,3 +80,29 @@ sqlite> SELECT * FROM tour_participants;
     8|Catarina Rau|30|true|4
     9|Richard Vale|31|false|6
     10|Sandra Vale|33|false|6
+
+
+OTHER JOINS:
+
+* Only display participants that are attending tours guided by Rick:
+
+  sqlite> SELECT tour_participants.id, tour_participants.name, tours.name
+     ...> FROM tour_participants, tours
+     ...> WHERE tour_id = tours.id AND tours.guide = "Rick";
+
+    8|Catarina Rau|Anda, Andalucia!
+    9|Richard Vale|Camino de Santiago
+    10|Sandra Vale|Camino de Santiago
+
+
+* Display those attending a Camino de Santiago tour and their guide
+
+  sqlite> SELECT tour_participants.name, tours.guide
+     ...> FROM tour_participants, tours
+     ...> WHERE tour_id = tours.id
+     ...> AND tours.name = "Camino de Santiago";
+
+    Harry Potter|Alex
+    Ginny Potter|Alex
+    Richard Vale|Rick
+    Sandra Vale|Rick
